@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<h2>ChickTrack</h2>
+<p>Welcome back to the portal</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openModule(event, 'Time')" id="defaultOpen">Time</button>
+  <button class="tablinks" onclick="openModule(event, 'Food Supply')">Food Supply</button>
+  <button class="tablinks" onclick="openModule(event, 'Eating Cycle')">Eating Cycle</button>
+  <button class="tablinks" onclick="openModule(event, 'Numeration')" id="defaultOpen">Numeration</button>
+
+</div>
+
+<div id="Time" class="tabcontent">
+  <h3>Time</h3>
+  <p>.</p>
+</div>
+
+<div id="Food Supply" class="tabcontent">
+  <h3>Food Supply</h3>
+  <p><img src="food.PNG" alt="Smiley face" height="500" width="800">
+</p>
+<p> The chicken food status and quantities are displayed here, Graphs and Pie charts will be included here.</p>
+</div>
+
+<div id="Eating Cycle" class="tabcontent">
+  <h3>Eating Cycle</h3>
+  <p>Information about how often the chicken eat as well as how fast they do so is collected
+    by the sustem and displayed here through various graphical analytic tools.</p>
+</div>
+
+<div id="Numeration" class="tabcontent">
+  <h3>Numeration</h3>
+  <p><b><i>example:</i></b></p>
+  <p><img src="count.PNG" alt="Smiley face" height="500" width="800"></p>
+  <p> The system will calcutate the total number of chicken inside the comound periodically and hence shall
+    determine the mobility of the chicken beyond the boundaries of the compound.</p>
+</div>
+
+<script>
+function openModule(evt, moduleName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(moduleName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
